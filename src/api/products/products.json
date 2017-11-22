@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1, "name": "Producto 1", "code": "P-1", "releaseDate": "2017", "rating": 4.4, "price": 13.50, 
+        "imageUrl": "https://pm1.narvii.com/6514/1a6f1c99c404242d92f4b029fe9956c72e6390e7_128.jpg", 
+        "imageWidth": 50, "imageMargin": 2
+    },
+    {
+        "id": 2, "name": "Producto 2", "code": "P-2", "releaseDate": "1996", "rating": 2.7, "price": 12, 
+        "imageUrl": "https://pm1.narvii.com/6514/1a6f1c99c404242d92f4b029fe9956c72e6390e7_128.jpg", 
+        "imageWidth": 50, "imageMargin": 2 
+    },
+    {
+        "id": 3, "name": "Producto 3", "code": "P-3", "releaseDate": "1997", "rating": 2.1, "price": 9.99, 
+        "imageUrl": "https://pm1.narvii.com/6514/1a6f1c99c404242d92f4b029fe9956c72e6390e7_128.jpg", 
+        "imageWidth": 50, "imageMargin": 2 
+    }
+]

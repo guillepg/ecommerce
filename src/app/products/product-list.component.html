@@ -1,0 +1,63 @@
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    {{pageTitle}}
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-md-2"> Filtro: </div>
+      <div class="col-md-4"> <input type="text" [(ngModel)] = listFilter/> </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6" *ngIf="listFilter && listFilter.length > 0">Filtrado por: {{listFilter}}</div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table">
+          <thead>
+            <tr *ngIf = "products && products.length > 0">
+              <th>
+                <button class="btn btn-primary" (click) = "toggleImages()">
+                  {{showImages ? 'Ocultar' : 'Mostrar'}} imagen
+                </button>
+              </th>
+              <th>Producto</th>
+              <th>Codigo</th>
+              <th>Disponible</th>
+              <th>Precio</th>
+              <th>Popularidad</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let product of filteredProducts">
+                <td>
+                  <img *ngIf = "showImages" [src] = "product.imageUrl" [title] = "product.title"
+                  [style.width.px] = "product.imageWidth" [style.margin.px] = "product.imageMargin" />
+                </td>
+                <td>
+                  <a [routerLink]="['/products', product.id]">{{product.name}}</a>
+                </td>
+                <td>
+                  {{product.code | convertToSpaces:'-'}}
+                </td>
+                <td>
+                  {{product.releaseDate}}
+                </td>
+                <td>
+                  {{product.price | currency : 'EUR':true:'1.2-2'}}
+                </td>
+                <td>
+                  <app-star [rating]="product.rating" (ratingClicked) = "changeView($event)"></app-star>
+                </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Table -->
+  
+</div>
